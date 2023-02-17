@@ -1,5 +1,4 @@
 sudo apt-get update 
-sudo apt-get upgrade -y
 sudo apt-get install sysstat jq bc -y
 sudo apt-get install build-essential
 sudo for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo performance > $i; done
@@ -101,8 +100,7 @@ sleep 10
 
 sudo systemctl stop solana
 
-sudo apt-get update \
-&& sudo apt-get install python3-venv git -y \
+sudo apt-get install python3-venv git -y \
 && git clone https://github.com/c29r3/solana-snapshot-finder.git \
 && cd solana-snapshot-finder \
 && python3 -m venv venv \
