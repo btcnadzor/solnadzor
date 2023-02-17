@@ -1,7 +1,7 @@
 sudo apt-get update 
 sudo apt-get install sysstat jq bc -y
 sudo apt-get install build-essential -y
-sudo for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo performance > $i; done
+for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo performance > $i; done
 sudo sysctl vm.swappiness=0
 sudo echo "vm.swappiness=0" >> /etc/sysctl.conf
 sudo apt install smartmontools -y
