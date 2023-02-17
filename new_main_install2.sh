@@ -1,10 +1,10 @@
 sudo apt-get update 
 sudo apt-get install sysstat jq bc -y
-sudo apt-get install build-essential
+sudo apt-get install build-essential -y
 sudo for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo performance > $i; done
 sudo sysctl vm.swappiness=0
 sudo echo "vm.swappiness=0" >> /etc/sysctl.conf
-sudo apt install smartmontools
+sudo apt install smartmontools -y
 
 sudo sh -c "$(curl -sSfL https://release.solana.com/v1.13.6/install)"
 export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
