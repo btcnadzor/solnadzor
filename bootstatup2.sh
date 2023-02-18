@@ -1,7 +1,7 @@
 #!/bin/bash
 python3exit=1
 solanawork=1
-ps -A | grep solana || solanawork=0
+ps -A | grep solana-valid || solanawork=0
 if [[ $solanawork == 0 ]]
 	then
 	ps -A | grep python3 || python3exit=0
