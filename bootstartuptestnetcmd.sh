@@ -16,8 +16,8 @@ if [[ $solanawork == 0 ]]
 		python3 /root/solana-snapshot-finder/snapshot-finder.py --snapshot_path /root/ledger -r https://api.testnet.solana.com --max_download_speed 90 --min_download_speed 20 --num_of_retries 5
 		systemctl start solana
 		deactivate
+		solana-validator monitor
 		else echo 'solana already restarting'
-    solana-validator monitor
-	fi
+    	fi
 else echo 'solana work'
 fi
