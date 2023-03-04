@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 python3exit=1
 solanawork=1
 ps -A | grep solana-valid || solanawork=0
