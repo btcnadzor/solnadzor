@@ -1,11 +1,12 @@
 #!/bin/bash
 echo 'REBOOT testnet'
+systemctl stop solana
 pausemin=15
-read -t 10 -p "сколько подождать до перезагрузки (15мин) ? " pausemin
+read -t 10 -p "сколько подождать до перезагрузки (15мин) " pausemin
 let "pausesec = $pausemin * 60"
 sleep $pausesec
 echo 'solana rebooting'
-systemctl stop solana 
+systemctl stop solana
 rm -rf /root/ledger/*
 fstrim -av 
 source $HOME/solana-snapshot-finder/venv/bin/activate
