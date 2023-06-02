@@ -1,7 +1,7 @@
 #!/bin/bash
 echo 'REBOOT testnet'
 pausemin=15
-read -t 10 -p "сколько подождать до перезагрузки (15мин)" pausemin
+read -t 10 -p "сколько подождать до перезагрузки (15мин) ? " pausemin
 let "pausesec = $pausemin * 60"
 sleep $pausesec
 echo 'solana rebooting'
