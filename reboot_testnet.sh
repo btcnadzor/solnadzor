@@ -1,9 +1,9 @@
 #!/bin/bash
 echo 'REBOOT testnet'
-pause=15
-read -t 10 -p "сколько подождать до перезагрузки (15мин)" pause
-let pause=$pause*60
-sleep $pause
+pausemin=15
+read -t 10 -p "сколько подождать до перезагрузки (15мин)" pausemin
+let "pausesec = $pausemin * 60"
+sleep $pausesec
 echo 'solana rebooting'
 systemctl stop solana 
 rm -rf /root/ledger/*
