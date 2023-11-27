@@ -10,6 +10,7 @@ echo 'solana rebooting'
 systemctl stop solana
 rm -rf /root/ledger/*
 fstrim -av 
+cp /root/genesis.bin /root/ledger/genesis.bin
 source $HOME/solana-snapshot-finder/venv/bin/activate
 python3 /root/solana-snapshot-finder/snapshot-finder.py --snapshot_path /root/ledger --max_latency 555 --max_download_speed 90 --min_download_speed 10 --num_of_retries 55
 systemctl start solana
